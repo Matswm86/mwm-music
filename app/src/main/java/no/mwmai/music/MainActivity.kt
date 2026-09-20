@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -33,7 +34,10 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        // Dark bars on every Android version: the default gives three-button
+        // navigation a light scrim and the status bar dark icons on a dark deck.
+        val bar = SystemBarStyle.dark(0xFF1C2027.toInt())
+        enableEdgeToEdge(statusBarStyle = bar, navigationBarStyle = bar)
         if (savedInstanceState == null) playFrom(intent)
         setContent {
             MwmMusicTheme {
