@@ -6,6 +6,8 @@ A small, quiet music player for Android in the spirit of Winamp: a display, a
 row of transport buttons, and a playlist underneath. It plays the audio files
 that are on your phone. That is the whole job.
 
+## What it does
+
 - **No ads, no account, no tracking.** The app does not even ask for the
   internet permission, so it has no way to phone anywhere.
 - **Plays what Android can decode:** mp3, m4a/aac, flac, ogg, opus, wav and
@@ -66,6 +68,21 @@ copies eight generated sine-wave mp3s onto it, taps one, and checks from the
 view hierarchy that the deck switched to Pause, the clock left 0:00 and the
 heart saved a favorite. The screenshot is taken at that moment, which is why
 the library is full of test tones rather than anybody's music.
+
+## How it works
+
+The library comes from Android's own media index, so every file the system
+lists as music shows up, minus ringtones and alarms. Playback runs in a Media3
+session service around an ExoPlayer, which is what keeps the music going with
+the screen off and draws the notification and lock-screen controls. The
+interface is Jetpack Compose and talks to that service through a Media3
+controller. Playlists, favorites and the last queue are one JSON file in the
+app's private storage, written through a temporary file so a crash mid-save
+cannot truncate it.
+
+## Status
+
+Version 0.1.0, sideload only. Not done yet: `.m3u` import and export.
 
 ## Build
 
