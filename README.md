@@ -22,7 +22,7 @@ that are on your phone. That is the whole job.
 
 ## 📲 Download
 
-**[⬇ Latest APK](https://github.com/Matswm86/mwm-music/releases/download/latest/mwm-music-c8b2e3a.apk)**
+**[⬇ Latest APK](https://github.com/Matswm86/mwm-music/releases/download/latest/mwm-music-f7dbeb1.apk)**
 &nbsp;·&nbsp; [all builds](https://github.com/Matswm86/mwm-music/releases)
 
 Open the link on your phone, tap the file, and allow "install from this source"
